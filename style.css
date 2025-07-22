@@ -1,9 +1,55 @@
-.container {
-    display: flex;
-    gap: 20vw;
-    justify-content: center;
+* {
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+    font-family: fantasy;
 }
 
-.scoreboard {
+html {
+    background-image: url(crumpedbackground.avif);
+}
+
+#title {
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 1rem;
+    font-weight: 1000;
+}
+
+#description, #rules {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+
+#buttonContainer {
     display: flex;
+    justify-content: center;
+    gap: 7rem;
+    padding: 2.5rem;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    border-radius: 5rem;
+}
+
+button {
+    border-radius: 30px;
+    min-width: 100px;
+    min-height: 50px;
+    font-size: 1rem;
+    margin-top: .5rem;
+}
+
+#playcard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 250px;
+}
+
+.icons {
+    width: 200px;
+    height: 200px;
+    /* object-fit: contain; */
 }
