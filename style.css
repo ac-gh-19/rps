@@ -25,6 +25,8 @@ html {
 #buttonContainer {
     display: flex;
     justify-content: center;
+    width: 70vw;
+    margin: auto;
     gap: 7rem;
     padding: 2.5rem;
     flex-wrap: wrap;
@@ -34,10 +36,12 @@ html {
 
 button {
     border-radius: 30px;
-    min-width: 100px;
-    min-height: 50px;
+    width: 100px;
+    height: 50px;
     font-size: 1rem;
     margin-top: .5rem;
+    background: rgb(0, 0, 0);
+    color: white;
 }
 
 #playcard {
@@ -53,3 +57,66 @@ button {
     height: 200px;
     /* object-fit: contain; */
 }
+
+#bottomhalf {
+    display: flex;
+    width: 65vw;
+    margin: auto;
+    padding-top: 3rem;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+#scoringboard {
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+#scoringtitle {
+    text-align: center;
+    margin: 0;
+}
+
+#scores {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 0;
+}
+
+#player {
+    margin: 0;
+    border: 1px solid black;
+    padding: .3rem;
+}
+
+
+#opponent {
+    flex-grow: 2;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 1rem;
+
+}
+
+#opponentplays {
+    margin: 0;
+}
+
+#opponentbuttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+

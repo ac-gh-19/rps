@@ -2,9 +2,28 @@ let humanScore = 0;
 let computerScore = 0;
 let scoreboard = document.querySelector("#scoreboard");
 let score = document.querySelector("#score");
+let playerscore = document.querySelector("#playerscore");
+let computerscore = document.querySelector("#computerscore");
+let oppbuttons = document.querySelectorAll(".oppbuttons");
+
+function highlightComputerChoice(computerChoice) {
+    oppbuttons.forEach(btn => {
+        btn.style.background = "black";
+        btn.style.color = "white";
+        if (btn.textContent.toLowerCase() === computerChoice) {
+            btn.style.background = "white";
+            btn.style.color = "black"
+            setTimeout(() => {
+                btn.style.background = "black";
+                btn.style.color = "white";
+            }, 1000);
+        }
+    })
+}
 
 
 let playRound = function(humanChoice, computerChoice) {
+    highlightComputerChoice(computerChoice);
     
     if (humanChoice === computerChoice) {
         scoreboard.textContent = "You TIE!";
@@ -28,6 +47,7 @@ let playRound = function(humanChoice, computerChoice) {
             (scoreboard.textContent = "You win! Scissors beats Paper", humanScore++);
     }
 
+    
     displayScore(computerScore, humanScore);
 }
 
@@ -38,7 +58,18 @@ buttons.forEach(btn => {
         let computerChoice = getComputerChoice();
         playRound(playerChoice, computerChoice);
     });
+
+    btn.addEventListener("mouseover", e => {
+        e.target.style.background = "white";
+        e.target.style.color = "black";
+    })
+
+    btn.addEventListener("mouseout", e => {
+        e.target.style.background = "black";
+        e.target.style.color = "white";
+    })
 })
+
 
 function getComputerChoice() {
     let compChoice = Math.floor((Math.random() * 3) + 1);
@@ -57,10 +88,14 @@ function resetScore() {
     computerScore = 0;
     score.textContent="";
     scoreboard.textContent="";
+    playerscore.textContent = 0;
+    computerscore.textContent = 0;
 }
 
 function displayScore() {
     score.textContent = `Your Score: ${humanScore} - Computer Score: ${computerScore}`;
+    playerscore.textContent = humanScore;
+    computerscore.textContent = computerScore;
     if (humanScore == 5) {
         alert("Player wins");
         resetScore();
